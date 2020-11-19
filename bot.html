@@ -27,27 +27,35 @@
 
     <a name="commands"><p class="h2">Commands</p></a>
     <p>Commands are always prefaced with an exclamation mark (!).</p>
-    <p class="h4">species</p>
-    <p>Purpose: Shows the current available species</p>
-    <p>Input: None</p>
-    <p>Example: <code>!species</code></p>
-
-    <p class="h4">char_list</p>
-    <p>Purpose: Shows the active characters of a species</p>
-    <p>Input: species<br />
-      note: Ensure spelling and capitalization is exact</p>
-    <p>Example: <code>!char_list VAMPIRES</code></p>
-
-    <p class="h4">app</p>
-    <p>Purpose: Shows the application url for a desired character</p>
-    <p>Input: "CHARACTER NAME"<br />
-      notes: 
-      <ul>
-        <li>Ensure spelling and capitalization is exact.</li>
-        <li>Don't skip the quotes!</li>
-        <li>There's a space between the command and your input.</li>
-      </ul>  </p>
-    <p>Example: <code>!app "MARTY MCFLY"</code></p><br /><br />
+    <table class="table">
+      <thead>
+        <th scope="col">command</th>
+        <th scope="col">purpose</th>
+        <th scope="col">example</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>species</td>
+          <td>Shows the current available species</td>
+          <td><code>!species</code></td>
+        </tr>
+        <tr>
+          <td>char_list &lt;species&gt;</td>
+          <td>Shows the active characters of a species</td>
+          <td><code>!char_list vampire</code></td>
+        </tr>
+        <tr>
+          <td>chars &lt;player name&gt;</td>
+          <td>Shows the active characters for a player</td>
+          <td><code>!chars "mystery player"</code></td>
+        </tr>
+        <tr>
+          <td>app &lt;character&gt;</td>
+          <td>Shows the application url and player name for a character</td>
+          <td><code>!app "marty mcfly"</code></td>
+        </tr>
+      </tbody>
+    </table><br /><br />
 
 
 
@@ -55,8 +63,38 @@
 
     
     <a name="releases"><h2>Releases</h2></a>
-    <p>initial release: 11/7/2020<br />
-    developer contact via Discord: LdyG33k#0777</p><br /><br />
+    <table class="table">
+      <thead>
+        <th scope="col">Release #</th>
+        <th scope="col">Date</th>
+        <th scope="col">Updates</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">2</th>
+          <td>11/19/2020</td>
+          <td>
+            <ul>
+              <li>Features</li>
+                <ul>
+                  <li>Player is now added to !app results</li>
+                  <li>!chars [player name] lists characters by player (if multiple words, use quotes)</li>
+                </ul>
+              <li>Bug Fixes</li>
+                <ul>
+                  <li>Value are now case insensitive</li>
+                  <li>database value are now lowercase</li>
+                </ul>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>11/7/2020</td>
+          <td>Initial Release</td>
+        </tr>
+      </tbody>
+    </table><br /><br />
 
 
 
@@ -64,10 +102,36 @@
 
 
     <a name="bugs"><h2>Known Bugs</h2></a>
-    <ul>
-      <li>Character names should be able to be used regardless of upper or lower case</li>
-      <li>All but URLs are capitalized in the database</li>
-    </ul><br /><br />
+    <table class="table">
+      <thead>
+        <th scope="col">Bug #</th>
+        <th scope="col">Date Detected</th>
+        <th scope="col">Impact</th>
+        <th scope="col">Summary</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">3</th>
+          <td>11/19/2020</td>
+          <td>medium</td>
+          <td>species must be exactly as in database (no plurals)</td>
+        </tr>
+        <tr>
+          <th scope="row"><del>2</del></th>
+          <td><del>11/7/2020</del></td>
+          <td><del>low</del></td>
+          <td><del>All but URLs are capitalized in the database</del></td>
+        </tr>
+        <tr>
+          <th scope="row"><del>1</del></th>
+          <td><del>11/7/2020</del></td>
+          <td><del>medium</del></td>
+          <td><del>Character names should be able to be used regardless of upper or lower case</del></td>
+        </tr>
+      </tbody>
+    </table>
+    
+   <br /><br />
 
 
 
@@ -76,6 +140,8 @@
 
     <a name="volunteer"><h2>Volunteer</h2></a>
     <p>Want to help?  Test?  Develop?  Make things pretty?  Have a suggestion? Hang out?  Join our <a href="https://discord.gg/DDMwJgS">Discord</a> and let us know!</p>
+  
+    <br />developer contact via Discord: LdyG33k#0777
   </div>
 
   <script src="js/scripts.js"></script>
