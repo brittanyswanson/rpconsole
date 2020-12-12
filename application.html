@@ -1,0 +1,752 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>RP Console</title>
+  <meta name="description" content="RPConsole">
+  <meta name="author" content="BSwanson">
+  <style type='text/css'>
+    /***************************************************************************
+	GLADIOLUS VARIABLES 
+		change these hex colors to change any 
+		color-changing feature found on this skin
+****************************************************************************/
+
+
+:root {
+    --ADMINCOLOR: #bf4080!important;
+
+    --AETHERCOLOR: #a85032!important;
+
+    --DRYADCOLOR: #009933!important;
+
+    --EVENTCOLOR: #66b3ff!important;
+
+    --FAECOLOR: #9B4D88!important;
+
+    --HARPYCOLOR: #C86371!important;
+
+    --HUMANCOLOR: #CD7A78!important;
+
+    --HYDRACOLOR: #cc9966!important;
+
+    --KEMURICOLOR: #eb7a0a!important;
+
+    --MERFOLKCOLOR: #476D86!important;
+
+    --MODERATORCOLOR: #f5a325!important;
+
+    --NUKCOLOR: #666699!important;
+
+    --SHIFTERCOLOR: #9a325c!important;
+
+    --SPHINXCOLOR: #c39d3c!important;
+
+    --URAEICOLOR: #528C75!important;
+
+    --VAMPIRECOLOR: #990000!important;
+
+    --WEREWOLFCOLOR: #2c72a0!important;
+
+    --WHITESTAGCOLOR: #9900cc!important;
+
+    --WITCHCOLOR: #B65A7E!important;
+}
+
+
+
+/***************************************************************************
+	MISC TEMPLATES CARRIED OVER FROM OTHER SKIN
+****************************************************************************/
+
+/*** REPLACE #MEMBERGROUP AND #HEXCODE BELOW ***/
+.hundredeuro #vampire [type=radio]:checked~label,
+.hundredeuro #vampire ul b,
+.hundredeuro #vampire h1 {
+	color: #990000!important;
+}
+.hundredeuro #merfolk [type=radio]:checked~label,
+.hundredeuro #merfolk ul b,
+.hundredeuro #merfolk h1 {
+	color: #476D86!important;
+}
+.hundredeuro #werewolf [type=radio]:checked~label,
+.hundredeuro #werewolf ul b,
+.hundredeuro #werewolf h1 {
+	color: #205374!important;
+}
+.hundredeuro #witch [type=radio]:checked~label,
+.hundredeuro #witch ul b,
+.hundredeuro #witch h1 {
+	color: #B65A7E!important;
+}
+.hundredeuro #harpy [type=radio]:checked~label,
+.hundredeuro #harpy ul b,
+.hundredeuro #harpy h1 {
+	color: #C86371!important;
+}
+.hundredeuro #shifter [type=radio]:checked~label,
+.hundredeuro #shifter ul b,
+.hundredeuro #shifter h1 {
+	color: #6D2340!important;
+}
+.hundredeuro #uraei [type=radio]:checked~label,
+.hundredeuro #uraei ul b,
+.hundredeuro #uraei h1 {
+	color: #528C75!important;
+}
+.hundredeuro #sphinx [type=radio]:checked~label,
+.hundredeuro #sphinx ul b,
+.hundredeuro #sphinx h1 {
+	color: #DCC68E!important;
+}
+.hundredeuro #human [type=radio]:checked~label,
+.hundredeuro #human ul b,
+.hundredeuro #human h1 {
+	color: #CD7A78!important;
+}
+.hundredeuro #dryad [type=radio]:checked~label,
+.hundredeuro #dryad ul b,
+.hundredeuro #dryad h1 {
+	color: #009933!important;
+}
+.hundredeuro #hydra [type=radio]:checked~label,
+.hundredeuro #hydra ul b,
+.hundredeuro #hydra h1 {
+	color: #cc9966!important;
+}
+.hundredeuro #kemuri [type=radio]:checked~label,
+.hundredeuro #kemuri ul b,
+.hundredeuro #kemuri h1 {
+	color: #eb7a0a!important;
+}
+.hundredeuro #whitestag [type=radio]:checked~label,
+.hundredeuro #whitestag ul b,
+.hundredeuro #whitestag h1 {
+	color: #730099!important;
+}
+.hundredeuro #nuk [type=radio]:checked~label,
+.hundredeuro #nuk ul b,
+.hundredeuro #nuk h1 {
+	color: #666699!important;
+
+}
+.hundredeuro #fae [type=radio]:checked~label,
+.hundredeuro #fae ul b,
+.hundredeuro #fae h1 {
+	color: #9B4D88!important;
+}
+.hundredeuro #aether [type=radio]:checked~label,
+.hundredeuro #aether ul b,
+.hundredeuro #aether h1 {
+	color: #a85032!important;
+}
+.hundredeuro {
+	width: 430px;
+	height: 490px;
+	margin: auto;
+	background: #fff;
+	border: solid 1px #ddd;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: 0;
+}
+.hundredeuro .tabs {
+	position: relative;
+	width: 0px;
+	height: 0px;
+
+}
+.hundredeuro .tab label {
+	position: relative;
+	display: block;
+	text-align: center;
+	top: 20px;
+	left: 321px;
+	width: 80px;
+	padding: 37px 5px;
+	border: solid 1px #ddd;
+	border-bottom: none;
+	height: 16px;
+	background: #eee;
+	transition: .5s;
+	font: 16px/16px open sans;
+}
+.hundredeuro .tab [type=radio] {
+	display: none;
+}
+.hundredeuro .content {
+	position: absolute;
+	background: #fff;
+	top: 20px;
+	bottom: 0px;
+	left: 20px;
+	right: 0px;
+	opacity: 0;
+	overflow: hidden;
+	width: 300px;
+	height: 450px;
+	border: solid 1px #ddd;
+	transition: .8s;
+}
+.hundredeuro [type=radio]:checked~label {
+	background: #f8f8f8;
+	z-index: 2;
+}
+.hundredeuro [type=radio]:checked~label~.content {
+	z-index: 1;
+	opacity: 1;
+}
+.hundredeuro .pic {
+	width: 300px;
+	height: 450px;
+	background-size: cover!important;
+}
+.hundredeuro .info {
+	margin: 20px;
+	height: 410px;
+	overflow: auto;
+}
+.hundredeuro ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 10px 0 0;
+	font: 10px/10px open sans;
+	text-align: left;
+}
+.hundredeuro ul li {
+	border: solid 1px #ddd;
+	margin: 0 auto 10px auto;
+	padding: 5px;
+}
+.hundredeuro ul b {
+	display: block;
+	color: #fff!important;
+	letter-spacing: 1px;
+	font: bold 10px/10px open sans;
+	text-transform: uppercase;
+	padding: 5px;
+	margin: -5px 0 5px -5px;
+	border-bottom: dotted 1px #ddd;
+}
+.hundredeuro .body {
+	margin: 20px;
+	height: 410px;
+	overflow: auto;
+	padding-right: 10px;
+	font: 10px/14px open sans;
+	text-align: justify;
+}
+.hundredeuro .body b {
+	font: bold 11px/14px open sans;
+}
+.hundredeuro .body::-webkit-scrollbar {
+	width: 3px;
+}
+.hundredeuro .body::-webkit-scrollbar-track {
+	background: #eee;
+	border-left: solid 1px #fff;
+	border-right: solid 1px #fff;
+}
+.hundredeuro .body::-webkit-scrollbar-thumb {
+	background: #eee;
+}
+.hundredeuro .info::-webkit-scrollbar {
+	width: 3px;
+}
+.hundredeuro .info::-webkit-scrollbar-track {
+	background: #eee;
+	border-left: solid 1px #fff;
+	border-right: solid 1px #fff;
+}
+.hundredeuro .info::-webkit-scrollbar-thumb {
+	background: #eee;
+}
+.hundredeuro .body h1 {
+	letter-spacing: 1px;
+	border-bottom: dotted 1px;
+	padding: 5px 0;
+	font: bold 14px/10px open sans;
+	text-transform: uppercase;
+}
+.hundredeuro img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 30px auto 20px auto;
+	border: solid 1px #ddd;
+	display: block;
+	padding: 10px;
+}
+.mitzicredit a {
+	text-align: center;
+	padding-top: 8px;
+	opacity: .4;
+	font: 14px/14px 'libre barcode 39 text';
+	transition: .1s;
+	text-decoration: none!important;
+	display: block;
+	width: 25px;
+	margin: auto;
+}
+.mitzicredit a:hover {
+	opacity: .6;
+}
+.bbct1 {
+	width: 400px;
+	background-color: #fff;
+	padding: 40px;
+	border: 1px solid #ccc;
+	font-size: 12px;
+	font-family: 'Comfortaa', cursive;
+	text-align: justify;
+	word-wrap: break-word;
+}
+.bbct3a {
+	max-width: 400px;
+	max-height: auto;
+	margin: 0 0 0px 0;
+}
+.bbct3b {
+	width: 400px;
+	height: auto;
+	margin: auto;
+}
+
+		
+
+#ucpcontent td {
+    background-color: #2b2b2b;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+  </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h1 class="display-3 text-center my-4">Driving Toward Death</h1>
+        <h4 class="display-4 text-center my-4">Application Helper</h4> 
+    </header>
+
+    <!--
+        ************************************************************************************
+                                        FORM START
+        ************************************************************************************
+    -->
+
+    <div class="container">
+        <form class="border p-3">
+            <!-- <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Basics
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body"> -->
+                            <div class="form-row">
+                                <!-- Full Name -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputFullName">Full Name</label>
+                                    <input type="text" class="form-control" id="inputFullName" placeholder="First (Middle) Last">
+                                </div>
+                                <!-- Nicknames -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputNickname">Nickname(s)</label>
+                                    <input type="text" class="form-control" id="inputNickname">
+                                </div>
+                            </div><!-- end form-row div -->
+                            <div class="form-row">
+                                <!-- Age -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputAge">Age</label>
+                                    <input type="number" class="form-control" id="inputAge">
+                                </div>
+                                <!-- Occupation -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputOccupation">Occupation</label>
+                                    <input type="text" class="form-control" id="inputOccupation">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <!-- Gender -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputGender">Gender</label>
+                                    <input type="text" class="form-control" id="inputGender">
+                                </div>
+                                <!-- Orientation -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputOrientation">Orientation</label>
+                                    <input type="text" class="form-control" id="inputOrientation">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <!-- Membergroup -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputMembergroup">Membergroup</label>
+                                    <select class="form-control" id="inputMembergroup">
+                                        <option value="default">Choose species</option>
+                                        <option value="aether">Aether</option>
+                                        <option value="dryad">Dryad</option>
+                                        <option value="fairy">Fairy</option>
+                                        <option value="harpy">Harpy</option>
+                                        <option value="human">Human</option>
+                                        <option value="hydra">Hydra</option>
+                                        <option value="kemuri">Kemuri</option>
+                                        <option value="mermaid">Mermaid</option>
+                                        <option value="nuk ">Nuk</option>
+                                        <option value="shifter">Shifter</option>
+                                        <option value="sphinx">Sphinx</option>
+                                        <option value="uraei">Uraei</option>
+                                        <option value="vampire">Vampire</option>
+                                        <option value="werewolf">Werewolf</option>
+                                        <option value="whitestag">White Stag</option>
+                                        <option value="witch">Witch</option>
+                                    </select>
+                                </div>
+                                <!-- Faceclaim -->
+                                <div class="form-group col-md-6">
+                                    <label for="inputFaceclaim">Faceclaim</label>
+                                    <input type="text" class="form-control" id="inputFaceclaim">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <!-- Content Rating -->
+                                    <label for="inputContentRating">Content Rating</label>
+                                    <input type="text" class="form-control" id="inputContentRating" aria-describedby="contentRatingHelp">
+                                    <small id="contentRatingHelp" class="form-text text-muted">What level are you comfortable roleplaying? NC-17, PG-13, etc.</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <!-- Image URL -->
+                                    <label for="inputImageURL">Character App Image URL (300 x 450)</label>
+                                    <input type="url" class="form-control" id="inputImageURL" aria-describedby="imageURLHelp" >
+                                    <small id="imageURLHelp" class="form-text text-muted">Please ensure link to image is exactly 300 x 450 or it will distort the app</small>
+                                </div>
+                            </div>
+                            
+                       
+
+
+                        <!-- </div><! - end card-body div ->
+                    </div><!- end collapseOne div ->
+                </div><!- end card div ->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                History
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            History here
+                        </div>
+
+                    </div>
+            </div>end accordion div -->
+        </form>
+
+        <form class="border p-3">
+            <!-- HISTORY -->
+            <label for="inputHistory">History</label><br />
+            <textarea id="inputHistory" aria-describedby="historyHelp" style="width: 100%; max-width: 100%; min-height: 8em;"></textarea>
+            <small id="historyHelp" class="form-text text-muted">Make sure to include (where character was born/came from, when/if they noticed their powers, how/why they ame to Scylla Bay)</small>
+        </form>
+
+        <form class="border p-3">
+            <!-- ABOUT -->
+            <label for="inputAbout">About</label><br />
+            <textarea id="inputAbout" aria-describedby="aboutHelp" style="width: 100%; max-width: 100%;"></textarea>
+            <small id="aboutHelp" class="form-text text-muted">Small blurb about your character's personality and/or history.</small>
+
+            <!-- PLATONIC -->
+            <label for="inputPlatonic">Platonic</label><br />
+            <textarea id="inputPlatonic" aria-describedby="platonicHelp" style="width: 100%; max-width: 100%;"></textarea>
+            <small id="platonicHelp" class="form-text text-muted">Friends.</small>
+
+            <!-- ROMANTIC -->
+            <label for="inputRomantic">Romantic</label><br />
+            <textarea id="inputRomantic" aria-describedby="romanticHelp" style="width: 100%; max-width: 100%;"></textarea>
+            <small id="romanticHelp" class="form-text text-muted">Lovers.</small>
+
+            <!-- ANTAGONISTIC -->
+            <label for="inputAntagonistic">Antagonistic</label><br />
+            <textarea id="inputAntagonistic" aria-describedby="antagonisticHelp" style="width: 100%; max-width: 100%;"></textarea>
+            <small id="antagonisticHelp" class="form-text text-muted">Enemies.</small>
+
+            <!-- OTHER -->
+            <label for="inputOther">Other</label><br />
+            <textarea id="inputOther" aria-describedby="otherHelp" style="width: 100%; max-width: 100%;"></textarea>
+            <small id="otherHelp" class="form-text text-muted">Where can your character be found?  What do they like to do in their spare time?</small>
+        </form>
+
+        <form class="border p-3">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputOOCName">Alias</label>
+                    <input type="text" class="form-control" id="inputOOCName">
+                </div>
+                <div class="form-group col-md-6">
+                    <!-- OOC Image URL -->
+                    <label for="inputOOCURL">OOC Image URL (150 x 150)</label>
+                    <input type="url" class="form-control" id="inputOOCURL" aria-describedby="oocURLHelp">
+                    <small id="oocURLHelp" class="form-text text-muted">Please ensure link to image is exactly 150 x 150 or it will distort the app</small>
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputTZ">Timezone</label>
+                    <select class="form-control" id="inputTZ">
+                        <option value="default">Choose Timezone</option>
+                        <option value="akt">alaska</option>
+                        <option value="anat">anadyr</option>
+                        <option value="aoe">anywhere</option>
+                        <option value="art">argentina</option>
+                        <option value="aet">australian eastern</option>
+                        <option value="bst">bangladesh</option>
+                        <option value="cvt">cape verde</option>
+                        <option value="ct">central</option>
+                        <option value="cet">central european</option>
+                        <option value="cst">china</option>
+                        <option value="et">eastern</option>
+                        <option value="eet">eastern european</option>
+                        <option value="gmt">greenwich mean time</option>
+                        <option value="gst">gulf</option>
+                        <option value="ht">hawaii</option>
+                        <option value="jst">japan</option>
+                        <option value="msk">moscow</option>
+                        <option value="mt">mountain</option>
+                        <option value="nzt">new zealand</option>
+                        <option value="nut">niue</option>
+                        <option value="pt">pacific</option>
+                        <option value="gst">south georgia</option>
+                        <option value="uzt">uzbekistan</option>
+                        <option value="vet">venezuelan</option>
+                        <option value="wib">western indonesian</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputContact">Contact</label>
+                    <select class="form-control" id="inputContact">
+                        <option value="default">Choose Method</option>
+                        <option value="discord">Discord</option>
+                        <option value="email">Email</option>
+                        <option value="do not disturb">Leave Me Alone</option>
+                        <option value="forum_message">Forum Messaging</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputContact">Contact</label>
+                    <select class="form-control" id="inputContact">
+                        <option value="default">Choose Method</option>
+                        <option value="discord">Discord</option>
+                        <option value="email">Email</option>
+                        <option value="do not disturb">Leave Me Alone</option>
+                        <option value="forum_message">Forum Messaging</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <button type="button" onclick="fillForm(this)" class="btn btn-success">Code It</button>
+        
+
+
+
+
+    <!--
+        ************************************************************************************
+                                        TEMPLATE DISPLAY
+        ************************************************************************************
+    -->
+        <div class="container" id="example_output">
+            <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <div class="hundredeuro">
+                <div id="vampire">
+                    <div class="tabs">
+                        <div class="tab">
+                            <input type="radio" id="tab-1" name="tab-group-1" checked>
+                            <label for="tab-1" title="image" style="padding-top: 35px;">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                            </label>
+                            <div class="content">
+                                <div class="pic" style="background:url(http://placehold.it/300x450);"></div>
+                            </div>
+                        </div><!-- end of tab-1-->
+                        <div class="tab">
+                            <input type="radio" id="tab-2" name="tab-group-1">
+                            <label for="tab-2" title="basics">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                            </label>
+                            <div class="content">
+                                <div class="info">
+                                    <ul>
+                                        <li><b>full name</b> <span id="character_name">lorem ipsum</span></li>
+                                        <li><b>nicknames</b> lorem ipsum</li>
+                                        <li><b>age</b> lorem ipsum</li>
+                                        <li><b>occupation</b> lorem ipsum</li>
+                                        <li><b>gender</b> lorem ipsum</li>
+                                        <li><b>orientation</b> lorem ipsum</li>
+                                        <li><b>membergroup</b> lorem ipsum</li>
+                                        <li><b>faceclaim</b> lorem ipsum</li>
+                                        <li><b>content rating</b> (What level are you comfortable roleplaying? NC-17, PG-13, etc.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- end of tab-2-->
+                        <div class="tab">
+                            <input type="radio" id="tab-3" name="tab-group-1">
+                            <label for="tab-3" title="history">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </label>
+                            <div class="content">
+                                <div class="body">
+                                    FREEFORM APP HERE. There is no word count, but to be accepted, the app must have 3 things: where your character was born/came from, when/if they noticed their powers, and how/why they came to Scylla Bay. Thank you!
+                                </div>
+                            </div>
+                        </div><!-- end of tab-3 -->
+                        <div class="tab">
+                            <input type="radio" id="tab-4" name="tab-group-1">
+                            <label for="tab-4" title="history">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            </label>
+                            <div class="content">
+                                <div class="body">
+                                    <h1>about</h1> SMALL BLURB ABOUT YOUR CHARACTER'S PERSONALITY AND/OR HISTORY.
+                                    <h1>platonic</h1> FRIENDS.
+                                    <h1>romantic</h1> LOVERS.
+                                    <h1>antagonistic</h1> ENEMIES.
+                                    <h1>other</h1> WHERE CAN YOUR CHARACTER BE FOUND? WHAT DO THEY LIKE TO DO IN THEIR SPARE TIME?
+                                </div>
+                            </div>
+                        </div><!-- end of tab-4 -->
+                        <div class="tab">
+                            <input type="radio" id="tab-5" name="tab-group-1">
+                            <label for="tab-5" title="ooc" style="padding-top: 35px; border-bottom: solid 1px #ddd;">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </label>
+                            <div class="content">
+                                <img src="https://placehold.it/150">
+                                <div class="info">
+                                    <ul style="padding: 0;">
+                                        <li><b>ooc name</b> lorem ipsum</li>
+                                        <li><b>timezone</b> lorem ipsum</li>
+                                        <li><b>contact</b> lorem ipsum</li>
+                                        <li><b>other characters</b> lorem ipsum</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- end of tab-5 -->
+                    </div>
+                </div>
+            </div>
+            <span class="mitzicredit"><a href="http://shine.jcink.net/index.php?showuser=8549" title="MITZI @ SHINE">MITZI</a></span>
+        </div>
+
+
+
+
+
+
+    <!--
+        ************************************************************************************
+                                        GENERATED CODE
+        ************************************************************************************
+    -->
+
+        <div class="container" id="generated_code">
+            <pre><code id="templateCode">
+                &lt;link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet"&gt;
+                &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"&gt;
+                &lt;div class="hundredeuro"&gt;
+                    &lt;div id="insert singular member group here!!!!"&gt;
+                        &lt;div class="tabs"&gt;
+                            &lt;div class="tab"&gt;
+                                &lt;input type="radio" id="tab-1" name="tab-group-1" checked&gt;
+                                    &lt;label for="tab-1" title="image" style="padding-top: 35px;"&gt;
+                                        &lt;i class="fa fa-picture-o" aria-hidden="true"> &lt;/i&gt;
+                                    &lt;/label&gt;
+                                    &lt;div class="content"&gt;
+                                        &lt;div class="pic" style="background:url(http://placehold.it/300x450);"&gt; &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;div class="tab"&gt;
+                                &lt;input type="radio" id="tab-2" name="tab-group-1"&gt;
+                                &lt;label for="tab-2" title="basics"&gt;
+                                    &lt;i class="fa fa-list" aria-hidden="true">&lt;/i&gt;
+                                &lt;/label&gt;
+                                &lt;div class="content"&gt;
+                                    &lt;div class="info"&gt;
+                                        &lt;ul&gt;
+                                            &lt;li&gt;&lt;b&gt;full name&lt;/b&gt; template_Character_Name&lt;/li&gt;
+            </code></pre>
+        </div>
+        
+
+
+
+
+
+
+
+
+    <!--
+    ************************************************************************************
+                                    JAVASCRIPT
+    ************************************************************************************
+    -->
+
+        <script>
+            function fillForm(id) {
+                // Get the basic info from the form
+                let character_name = document.getElementById("inputFullName").value
+                let character_nickname = document.getElementById("inputNickname").value
+                let character_age = document.getElementById("inputAge").value
+                let character_occupataion = document.getElementById("inputOccupation").value
+                let character_gender = document.getElementById("inputGender").value
+                let character_orientation = document.getElementById("inputOrientation").value
+                let character_membergroup = document.getElementById("inputMembergroup").value
+                let character_faceclaim = document.getElementById("inputFaceclaim").value
+                let character_contentrating = document.getElementById("inputContentRating").value
+                
+                // Fill in template sample
+                document.getElementById("character_name").innerHTML = character_name
+
+                // Fill in code
+                let template = document.getElementById("templateCode").innerHTML;
+                let replacement_Membergroup = template.replace("insert singular member group here!!!!", character_membergroup);
+                document.getElementById("templateCode").innerHTML = replacement_Membergroup;
+
+                // TO DO
+                // Pic
+
+                replacement_Character_Name = template.replace("template_Character_Name", character_name)
+                document.getElementById("templateCode").innerHTML = replacement_Character_Name;
+                
+            }
+        </script>
+
+    <br /><br /><br /><br /><br /><br />
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
