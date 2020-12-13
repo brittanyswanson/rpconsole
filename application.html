@@ -340,7 +340,6 @@
                                         FORM START
         ************************************************************************************
     -->
-
     <div class="container">
         <form class="border p-3">
             <!-- <div id="accordion">
@@ -561,192 +560,318 @@
                         <option value="forum_message">Forum Messaging</option>
                     </select>
                 </div>
+                <div class="form-group col-md-6">
+                    <label for="inputOtherChars">Other Characters</label>
+                    <input type="text" class="form-control" id="inputOtherChars">
+                </div>
             </div>
         </form>
 
         <button type="button" onclick="fillForm(this)" class="btn btn-success">Code It</button>
-        
+    </div>
 
+    <div class="container mt-5" id="example_output" >
+        <div class="row">
+            <!--************************************************************************************
+                                                Sample Display of Template
+                ************************************************************************************-->
+            <div class="col-lg-6">
+                    <h2 class="text-center">Sample</h2>
+                    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+                    <div class="hundredeuro">
+                        <div id="vampire">
+                            <div class="tabs">
 
+                                <div class="tab">
+                                    <input type="radio" id="tab-1" name="tab-group-1" checked>
+                                    <label for="tab-1" title="image" style="padding-top: 35px;">
+                                        <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                    </label>
+                                    <div class="content">
+                                        <div id="template_pic" class="pic" style="background:url(http://placehold.it/300x450);"></div>
+                                    </div>
+                                </div><!-- end of tab-1-->
 
+                                <div class="tab">
+                                    <input type="radio" id="tab-2" name="tab-group-1">
+                                    <label for="tab-2" title="basics">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </label>
+                                    <div class="content">
+                                        <div class="info">
+                                            <ul>
+                                                <li><b>full name</b> <span id="template_name">lorem ipsum</span></li>
+                                                <li><b>nicknames</b> <span id="template_nickname">lorem ipsum</span></li>
+                                                <li><b>age</b> <span id="template_age">lorem ipsum</span></li>
+                                                <li><b>occupation</b> <span id="template_occupation">lorem ipsum</span></li>
+                                                <li><b>gender</b> <span id="template_gender">lorem ipsum</span></li>
+                                                <li><b>orientation</b> <span id="template_orientation">lorem ipsum</span></li>
+                                                <li><b>membergroup</b> <span id="template_membergroup">lorem ipsum</span></li>
+                                                <li><b>faceclaim</b> <span id="template_faceclaim">lorem ipsum</span></li>
+                                                <li><b>content rating</b> <span id="template_contentrating">(What level are you comfortable roleplaying? NC-17, PG-13, etc.)</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!-- end of tab-2-->
+                                    
+                                <div class="tab">
+                                    <input type="radio" id="tab-3" name="tab-group-1">
+                                    <label for="tab-3" title="history">
+                                        <i class="fa fa-book" aria-hidden="true"></i>
+                                    </label>
+                                    <div class="content">
+                                        <div class="body" id="template_history" style="white-space: pre-wrap;">
+                                            FREEFORM APP HERE. There is no word count, but to be accepted, the app must have 3 things: where your character was born/came from, when/if they noticed their powers, and how/why they came to Scylla Bay. Thank you!
+                                        </div>
+                                    </div>
+                                </div><!-- end of tab-3 -->
 
-    <!--
-        ************************************************************************************
-                                        TEMPLATE DISPLAY
-        ************************************************************************************
-    -->
-        <div class="container" id="example_output">
-            <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-            <div class="hundredeuro">
-                <div id="vampire">
-                    <div class="tabs">
-                        <div class="tab">
-                            <input type="radio" id="tab-1" name="tab-group-1" checked>
-                            <label for="tab-1" title="image" style="padding-top: 35px;">
-                                <i class="fa fa-picture-o" aria-hidden="true"></i>
-                            </label>
-                            <div class="content">
-                                <div class="pic" style="background:url(http://placehold.it/300x450);"></div>
+                                <div class="tab">
+                                    <input type="radio" id="tab-4" name="tab-group-1">
+                                        <label for="tab-4" title="history">
+                                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                    </label>
+                                    <div class="content">
+                                        <div class="body">
+                                            <h1>about</h1> <span id="template_about">SMALL BLURB ABOUT YOUR CHARACTER'S PERSONALITY AND/OR HISTORY.</span>
+                                            <h1>platonic</h1> <span id="template_platonic">FRIENDS.</span>
+                                            <h1>romantic</h1> <span id="template_romantic">LOVERS.</span>
+                                            <h1>antagonistic</h1> <span id="template_antagonistic">ENEMIES.</span>
+                                            <h1>other</h1> <span id="template_other">WHERE CAN YOUR CHARACTER BE FOUND? WHAT DO THEY LIKE TO DO IN THEIR SPARE TIME?</span>
+                                        </div>
+                                    </div>
+                                </div><!-- end of tab-4 -->
+
+                                <div class="tab">
+                                    <input type="radio" id="tab-5" name="tab-group-1">
+                                    <label for="tab-5" title="ooc" style="padding-top: 35px; border-bottom: solid 1px #ddd;">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                    </label>
+                                    <div class="content">
+                                        <img id="player_img" src="https://placehold.it/150">
+                                        <div class="info">
+                                            <ul style="padding: 0;">
+                                                <li><b>ooc name</b> <span id="template_ooc_name">lorem ipsum</span></li>
+                                                <li><b>timezone</b> <span id="template_tz">lorem ipsum</span></li>
+                                                <li><b>contact</b> <span id="template_contact">lorem ipsum</span></li>
+                                                <li><b>other characters</b> <span id="template_other_chars">lorem ipsum</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!-- end of tab-5 -->
                             </div>
-                        </div><!-- end of tab-1-->
-                        <div class="tab">
-                            <input type="radio" id="tab-2" name="tab-group-1">
-                            <label for="tab-2" title="basics">
-                                <i class="fa fa-list" aria-hidden="true"></i>
-                            </label>
-                            <div class="content">
-                                <div class="info">
-                                    <ul>
-                                        <li><b>full name</b> <span id="character_name">lorem ipsum</span></li>
-                                        <li><b>nicknames</b> lorem ipsum</li>
-                                        <li><b>age</b> lorem ipsum</li>
-                                        <li><b>occupation</b> lorem ipsum</li>
-                                        <li><b>gender</b> lorem ipsum</li>
-                                        <li><b>orientation</b> lorem ipsum</li>
-                                        <li><b>membergroup</b> lorem ipsum</li>
-                                        <li><b>faceclaim</b> lorem ipsum</li>
-                                        <li><b>content rating</b> (What level are you comfortable roleplaying? NC-17, PG-13, etc.)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- end of tab-2-->
-                        <div class="tab">
-                            <input type="radio" id="tab-3" name="tab-group-1">
-                            <label for="tab-3" title="history">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                            </label>
-                            <div class="content">
-                                <div class="body">
-                                    FREEFORM APP HERE. There is no word count, but to be accepted, the app must have 3 things: where your character was born/came from, when/if they noticed their powers, and how/why they came to Scylla Bay. Thank you!
-                                </div>
-                            </div>
-                        </div><!-- end of tab-3 -->
-                        <div class="tab">
-                            <input type="radio" id="tab-4" name="tab-group-1">
-                            <label for="tab-4" title="history">
-                                <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            </label>
-                            <div class="content">
-                                <div class="body">
-                                    <h1>about</h1> SMALL BLURB ABOUT YOUR CHARACTER'S PERSONALITY AND/OR HISTORY.
-                                    <h1>platonic</h1> FRIENDS.
-                                    <h1>romantic</h1> LOVERS.
-                                    <h1>antagonistic</h1> ENEMIES.
-                                    <h1>other</h1> WHERE CAN YOUR CHARACTER BE FOUND? WHAT DO THEY LIKE TO DO IN THEIR SPARE TIME?
-                                </div>
-                            </div>
-                        </div><!-- end of tab-4 -->
-                        <div class="tab">
-                            <input type="radio" id="tab-5" name="tab-group-1">
-                            <label for="tab-5" title="ooc" style="padding-top: 35px; border-bottom: solid 1px #ddd;">
-                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                            </label>
-                            <div class="content">
-                                <img src="https://placehold.it/150">
-                                <div class="info">
-                                    <ul style="padding: 0;">
-                                        <li><b>ooc name</b> lorem ipsum</li>
-                                        <li><b>timezone</b> lorem ipsum</li>
-                                        <li><b>contact</b> lorem ipsum</li>
-                                        <li><b>other characters</b> lorem ipsum</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- end of tab-5 -->
+                        </div>
                     </div>
+                    <span class="mitzicredit"><a href="http://shine.jcink.net/index.php?showuser=8549" title="MITZI @ SHINE">MITZI</a></span>
+            </div>
+            <!--************************************************************************************
+                                                GENERATED CODE
+                ************************************************************************************-->
+            <div class="col-lg-6">
+                <h2 class="text-center">Code</h2>
+                <div class="hundredeuro" style="max-height: 490px; overflow-y: scroll;">
+                    <pre><code id="templateCode">
+[dohtml]
+&lt;link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"&gt;
+&lt;div class="hundredeuro"&gt;
+    &lt;div id="insert singular member group here!!!!"&gt;
+        &lt;div class="tabs"&gt;
+
+            &lt;div class="tab"&gt;
+                &lt;input type="radio" id="tab-1" name="tab-group-1" checked&gt;
+                &lt;label for="tab-1" title="image" style="padding-top: 35px;"&gt;
+                    &lt;i class="fa fa-picture-o" aria-hidden="true"> &lt;/i&gt;
+                &lt;/label&gt;
+                &lt;div class="content"&gt;
+                    &lt;div class="pic" style="background:url(http://placehold.it/300x450);"&gt; &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="tab"&gt;
+                &lt;input type="radio" id="tab-2" name="tab-group-1"&gt;
+                &lt;label for="tab-2" title="basics"&gt;
+                    &lt;i class="fa fa-list" aria-hidden="true">&lt;/i&gt;
+                &lt;/label&gt;
+                &lt;div class="content"&gt;
+                    &lt;div class="info"&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;b&gt;full name&lt;/b&gt; template_Character_Name&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;nicknames&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;age&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;occupation&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;gender&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;orientation&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;membergroup&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;faceclaim&lt;/b&gt; lorem ipsum&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;content rating&lt;/b&gt; (What level are you comfortable roleplaying? NC-17, PG-13, etc.)&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="tab"&gt;
+                &lt;input type="radio" id=tab-3" name="tab-group-1"&gt;
+                &lt;label for="tab-3" title="history"&gt;
+                    &lt;i class="fa fa-book" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/label&gt;
+                &lt;div class="content"&gt;
+                    &lt;div class="body"&gt;
+                        FREEFORM APP HERE.
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="tab"&gt;
+                &lt;input type="radio" id="tab-4" name="tab-group-1"&gt;
+                &lt;label for="tab-4" title="history"&gt;
+                    &lt;i class="fa fa-comments-o" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/label&gt;
+                &lt;div class="content"&gt;
+                    &lt;div class="body"&gt;
+                        &lt;h1&gt;about&lt;/h1&gt;
+                        SMALL BLURB ABOUT YOUR CHARACTER'S PERSONALITY AND/OR HISTORY.
+                        &lt;h1&gt;platonic&lt;/h1&gt;
+                        FRIENDS.
+                        &lt;h1&gt;romantic&lt;/h1&gt;
+                        LOVERS.
+                        &lt;h1&gt;antagonistic&lt;/h1&gt;
+                        ENEMIES.
+                        &lt;h1&gt;other&lt;/h1&gt;
+                        WHERE CAN YOUR CHARACTER BE FOUND? WHAT DO THEY LIKE TO DO IN THEIR SPARE TIME?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="tab"&gt;
+                &lt;input type="radio" id="tab-5" name="tab-group-1"&gt;
+                &lt;label for="tab-5" title="ooc" style="padding-top: 35px; border-bottom: solid 1px #ddd;"&gt;
+                    &lt;i class="fa fa-user-circle-o" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/label&gt;
+                &lt;div class="content"&gt;
+                    &lt;img src="https://placehold.it/150"&gt;
+                    &lt;div class="info"&gt;
+                        &lt;ul style="padding: 0;"&gt;
+                            &lt;li&gt;&lt;b&gt;ooc name&lt;/b&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;timezone&lt;/b&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;contact&lt;/b&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;b&gt;other characters&lt;/b&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;span class="mitzicredit"&gt;
+    &lt;a href="http://shine.jcink.net/index.php?showuser=8549" title="MITZI @ SHINE"&gt;MITZI/a&gt;
+&lt;/span&gt;
+[/dohtml]
+                    </code></pre>
                 </div>
             </div>
-            <span class="mitzicredit"><a href="http://shine.jcink.net/index.php?showuser=8549" title="MITZI @ SHINE">MITZI</a></span>
-        </div>
-
-
-
-
-
-
-    <!--
-        ************************************************************************************
-                                        GENERATED CODE
-        ************************************************************************************
-    -->
-
-        <div class="container" id="generated_code">
-            <pre><code id="templateCode">
-                &lt;link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Open+Sans:400,400i,700,700i" rel="stylesheet"&gt;
-                &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"&gt;
-                &lt;div class="hundredeuro"&gt;
-                    &lt;div id="insert singular member group here!!!!"&gt;
-                        &lt;div class="tabs"&gt;
-                            &lt;div class="tab"&gt;
-                                &lt;input type="radio" id="tab-1" name="tab-group-1" checked&gt;
-                                    &lt;label for="tab-1" title="image" style="padding-top: 35px;"&gt;
-                                        &lt;i class="fa fa-picture-o" aria-hidden="true"> &lt;/i&gt;
-                                    &lt;/label&gt;
-                                    &lt;div class="content"&gt;
-                                        &lt;div class="pic" style="background:url(http://placehold.it/300x450);"&gt; &lt;/div&gt;
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                            &lt;div class="tab"&gt;
-                                &lt;input type="radio" id="tab-2" name="tab-group-1"&gt;
-                                &lt;label for="tab-2" title="basics"&gt;
-                                    &lt;i class="fa fa-list" aria-hidden="true">&lt;/i&gt;
-                                &lt;/label&gt;
-                                &lt;div class="content"&gt;
-                                    &lt;div class="info"&gt;
-                                        &lt;ul&gt;
-                                            &lt;li&gt;&lt;b&gt;full name&lt;/b&gt; template_Character_Name&lt;/li&gt;
-            </code></pre>
-        </div>
-        
-
-
-
-
-
-
-
-
+        </div><!-- end row div -->
+        <button type="button" onclick="copy_text(templateCode)" class="btn btn-success float-right">Copy</button>
+    </div><!-- end example_output -->
+    <br /><br /><br /><br /><br /><br />
+    
     <!--
     ************************************************************************************
                                     JAVASCRIPT
     ************************************************************************************
     -->
+    <script>
+            function copy_text(element) {
+                var text = document.getElementById(element);
+                console.log(text)
+                var selection = window.getSelection();
+                var range = document.createRange();
 
-        <script>
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                //add to clipboard
+                document.execComand('copy');
+            }
+
             function fillForm(id) {
                 // Get the basic info from the form
-                let character_name = document.getElementById("inputFullName").value
-                let character_nickname = document.getElementById("inputNickname").value
-                let character_age = document.getElementById("inputAge").value
-                let character_occupataion = document.getElementById("inputOccupation").value
-                let character_gender = document.getElementById("inputGender").value
-                let character_orientation = document.getElementById("inputOrientation").value
-                let character_membergroup = document.getElementById("inputMembergroup").value
-                let character_faceclaim = document.getElementById("inputFaceclaim").value
-                let character_contentrating = document.getElementById("inputContentRating").value
-                
-                // Fill in template sample
-                document.getElementById("character_name").innerHTML = character_name
+                let character_name = document.getElementById("inputFullName").value;
+                let character_nickname = document.getElementById("inputNickname").value;
+                let character_age = document.getElementById("inputAge").value;
+                let character_occupataion = document.getElementById("inputOccupation").value;
+                let character_gender = document.getElementById("inputGender").value;
+                let character_orientation = document.getElementById("inputOrientation").value;
+                let character_membergroup = document.getElementById("inputMembergroup").value;
+                let character_faceclaim = document.getElementById("inputFaceclaim").value;
+                let character_contentrating = document.getElementById("inputContentRating").value;
+                let character_image_url = document.getElementById("inputImageURL").value;
 
-                // Fill in code
+                let character_history = document.getElementById("inputHistory").value;
+
+                let character_about = document.getElementById("inputAbout").value;
+                let character_platonic = document.getElementById("inputPlatonic").value;
+                let character_romantic = document.getElementById("inputRomantic").value;
+                let character_antagonistic = document.getElementById("inputAntagonistic").value;
+                let character_other = document.getElementById("inputOther").value;
+
+                let player_name = document.getElementById("inputOOCName").value;
+                let timezone = document.getElementById("inputTZ").value;
+                let contact_method = document.getElementById("inputContact").value;
+                let other_characters = document.getElementById("inputOtherChars").value;
+                
+                // Change Template Sample
+                document.getElementById("template_name").innerHTML = character_name
+                document.getElementById("template_nickname").innerHTML = character_nickname
+                document.getElementById("template_age").innerHTML = character_age
+                document.getElementById("template_occupation").innerHTML = character_occupataion
+                document.getElementById("template_gender").innerHTML = character_gender
+                document.getElementById("template_orientation").innerHTML = character_orientation
+                document.getElementById("template_membergroup").innerHTML = character_membergroup
+                document.getElementById("template_faceclaim").innerHTML = character_faceclaim
+                document.getElementById("template_contentrating").innerHTML = character_contentrating
+                document.getElementById("template_pic").style["background"] = "url(" + character_image_url + ")";
+
+                document.getElementById("template_history").innerHTML = character_history
+
+                document.getElementById("template_about").innerHTML = character_about
+                document.getElementById("template_platonic").innerHTML = character_platonic
+                document.getElementById("template_romantic").innerHTML = character_romantic
+                document.getElementById("template_antagonistic").innerHTML = character_antagonistic
+                document.getElementById("template_other").innerHTML = character_other
+
+                document.getElementById("template_ooc_name").innerHTML = player_name
+                document.getElementById("template_tz").innerHTML = timezone
+                document.getElementById("template_contact").innerHTML = contact_method
+                document.getElementById("template_other_chars").innerHTML = other_characters
+
+
+                // Change Code
                 let template = document.getElementById("templateCode").innerHTML;
-                let replacement_Membergroup = template.replace("insert singular member group here!!!!", character_membergroup);
-                document.getElementById("templateCode").innerHTML = replacement_Membergroup;
+
+                // item = document.querySelector("#insert singular member group here!!!!");
+                // console.log(item)
+
+                document.getElementById("templateCode").innerHTML = template.replace("insert singular member group here!!!!", character_membergroup);
+                document.getElementById("templateCode").innerHTML = template.replace("template_Character_Name", character_name);
+
 
                 // TO DO
                 // Pic
 
-                replacement_Character_Name = template.replace("template_Character_Name", character_name)
-                document.getElementById("templateCode").innerHTML = replacement_Character_Name;
+                // document.getElementById("template_name").innerHTML = template.replace("template_name", character_name);
+                // document.getElementById("template_nickname").innerHTML = template.replace("template_nickname", character_nickname);
+                // document.getElementById("template_age").innerHTML = template.replace("template_age", character_age);
+                // document.getElementById("template_occupation").innerHTML = template.replace("template_occupation", character_occupation);
+
+               
                 
             }
-        </script>
-
-    <br /><br /><br /><br /><br /><br />
-    </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
