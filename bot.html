@@ -35,25 +35,38 @@
       </thead>
       <tbody>
         <tr>
-          <td>species</td>
-          <td>Shows the current available species</td>
-          <td><code>!species</code></td>
+          <td>app "first name"</td>
+          <td>Species, faceclaim, player, and application url</td>
+          <td><code>!app "marty mcfly"</code></td>
         </tr>
         <tr>
-          <td>char_list &lt;species&gt;</td>
-          <td>Shows the active characters of a species</td>
-          <td><code>!char_list vampire</code></td>
-        </tr>
-        <tr>
-          <td>chars &lt;player name&gt;</td>
-          <td>Shows the active characters for a player</td>
+          <td>chars "player name"</td>
+          <td>List of active characters associated with player</td>
           <td><code>!chars "mystery player"</code></td>
         </tr>
         <tr>
-          <td>app &lt;character&gt;</td>
-          <td>Shows the application url and player name for a character</td>
-          <td><code>!app "marty mcfly"</code></td>
+          <td>char_list species</td>
+          <td>List of active characters belonging to species</td>
+          <td><code>!char_list vampire</code></td>
         </tr>
+        <tr>
+          <td>faceclaim</td>
+          <td>Available or Taken</td>
+          <td><code>!faceclaim "First Last"</code></td>
+        </tr>
+        <tr>
+          <td>helpme</td>
+          <td>Help dialogue</td>
+          <td><code>!helpme</code></td>
+        </tr>
+        <tr>
+          <td>species</td>
+          <td>List of current species in singular form</td>
+          <td><code>!species</code></td>
+        </tr>
+        
+        
+        
       </tbody>
     </table><br /><br />
 
@@ -70,6 +83,26 @@
         <th scope="col">Updates</th>
       </thead>
       <tbody>
+        <tr>
+          <th scope="row">3</th>
+          <td>12/31/2020</td>
+          <td>
+            <ul>
+              <li>Features</li>
+                <ul>
+                  <li>!faceclaim "first last" returns whether a faceclaim is available or taken</li>
+                  <li>Lists are now returned in ascending alphabetical order</li>
+                  <li>!app now additionally returns faceclaim information with character</li>
+                </ul>
+              <li>Bug Fixes</li>
+                <ul>
+                  <li>More exception language around values not found</li>
+                  <li>Trim is now implemented in every query</li>
+                  <li>Additional logging</li>
+                </ul>
+            </ul>
+          </td>
+        </tr>
         <tr>
           <th scope="row">2</th>
           <td>11/19/2020</td>
@@ -111,10 +144,10 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">3</th>
-          <td>11/19/2020</td>
-          <td>medium</td>
-          <td>species must be exactly as in database (no plurals)</td>
+          <th scope="row"><del>3</del></th>
+          <td><del>11/19/2020</del></td>
+          <td><del>medium</del></td>
+          <td><del>species must be exactly as in database (no plurals)</del></td>
         </tr>
         <tr>
           <th scope="row"><del>2</del></th>
