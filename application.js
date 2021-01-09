@@ -92,7 +92,7 @@ function update_code(character_dictionary) {
 
 &lt;li&gt;&lt;b&gt;full name&lt;/b&gt; ${character_dictionary.name}&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;nicknames&lt;/b&gt; ${character_dictionary.nickname}&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;age&lt;/b&gt; ${character_dictionary.name}&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;age&lt;/b&gt; ${character_dictionary.age}&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;occupation&lt;/b&gt; ${character_dictionary.occupation}&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;gender&lt;/b&gt; ${character_dictionary.gender}&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;orientation&lt;/b&gt; ${character_dictionary.orientation}&lt;/li&gt;
